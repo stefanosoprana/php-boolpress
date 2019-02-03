@@ -11,21 +11,14 @@
     $userSlug = $_GET['slug'];
 
     include 'data.php';
+    include 'functions.php';
 
     foreach ($posts as $post) {
       if ($post['slug'] == $userSlug) { ?>
         <div class="container">
           <div class="header">
             <h2><?php echo $post['title'] ?></h2>
-            <small> published <?php
-
-            $date = $post['published_at'];
-            $newdate = DateTime::createFromFormat('d/m/Y H:i:s', $date);
-
-            echo $newdate->format('j F').' at ';
-            echo $newdate->format('H');
-
-            ?></small>
+            <small> published <?php dateFormat($post['published_at']); ?></small>
           </div>
           <div class="main">
             <img src="<?php echo $post['image'] ?>">
@@ -38,7 +31,6 @@
           </div>
         </div>
       <?php  }
-    }
-    ?>
+    } ?>
   </body>
 </html>

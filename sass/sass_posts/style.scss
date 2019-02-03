@@ -1,4 +1,4 @@
-@import 'common.scss';
+@import 'sass/common.scss';
 
 .post {
   margin: 30px 10px;
@@ -8,6 +8,12 @@
     }
     h3 {
       margin: 30px 20px 30px 0px;
+      a {
+        color: black;
+      }
+    }
+    small {
+      color: lightgrey;
     }
   }
 }

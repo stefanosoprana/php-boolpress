@@ -10,20 +10,27 @@
       <?php
 
         include 'data.php';
+        include 'functions.php';
 
-        foreach ($posts as $post) { ?>
-          <div class="post">
-            <div class="title">
-              <h3><a href="http://localhost/esercizio7/post-detail.php?slug=<?php echo $post['slug'] ?>">
-                <?php echo $post['title']; ?>
-              </a></h3>
-              <small><?php echo $post['published_at']; ?></small>
+        $userTag = $_GET['tag'];
+
+        foreach ($posts as $post) {
+          if (in_array($userTag, $post['tag']) || $userTag == NULL || empty($userTag)) { ?>
+
+            <div class="post">
+              <div class="title">
+                <h3><a href="http://localhost/esercizio7/post-detail.php?slug=<?php echo $post['slug'] ?>">
+                  <?php echo $post['title']; ?>
+                </a></h3>
+                <small>Published <?php dateFormat($post['published_at']); ?></small>
+              </div>
+              <div class="text">
+                <p><?php echo substr($post['content'],0,150) ?></p>
+              </div>
             </div>
-            <div class="text">
-              <p><?php echo substr($post['content'],0,150) ?></p>
-            </div>
-          </div>
-      <?php } ?>
+
+          <?php }
+        } ?>
     </div>
   </body>
 </html>

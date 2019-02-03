@@ -1,0 +1,27 @@
+@import 'common.scss';
+
+.container {
+  margin: 20px 10px;
+  .header {
+    small {
+      display: inline-block;
+      margin: 20px 0;
+      color: lightgrey;
+    }
+  }
+  .main {
+    display: flex;
+    justify-content: flex-start;
+    img {
+      height: 200px;
+    }
+    .text {
+      max-width: 900px;
+      margin-left: 20px;
+    }
+  }
+  .tag {
+    margin: 20px 0;
+    color: lightgrey;
+  }
+}

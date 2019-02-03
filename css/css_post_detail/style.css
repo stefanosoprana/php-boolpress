@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 20px 10px;
+}
+
+.container .header small {
+  display: inline-block;
+  margin: 20px 0;
+  color: lightgrey;
+}
+
+.container .main {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container .main img {
+  height: 200px;
+}
+
+.container .main .text {
+  max-width: 900px;
+  margin-left: 20px;
+}
+
+.container .tag {
+  margin: 20px 0;
+  color: lightgrey;
+}
+
